@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ServiceWorkerRegistrar from "@/components/ServiceWorkerRegistrar";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -47,6 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-white">
+        <ServiceWorkerRegistrar />
         {/* Mobile-first container: max-480px, centered on desktop */}
         <div className="mx-auto w-full max-w-[480px] min-h-dvh flex flex-col bg-white shadow-[0_0_0_1px_#e8eaed] sm:shadow-[0_0_40px_rgba(0,0,0,0.06)]">
           {children}
